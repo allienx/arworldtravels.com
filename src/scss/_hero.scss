@@ -1,0 +1,14 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.hero.is-fullheight {
+    min-height: 100vh;
+}
+
+.hero.is-fullheight-with-navbar {
+    min-height: calc(100vh - 66px);
+}

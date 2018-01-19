@@ -1,0 +1,60 @@
+@import "bootstrap/scss/mixins/breakpoints";
+
+header {
+    position: relative;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.background-slideshow {
+    position: absolute;
+    height: calc(100vh - 66px);
+    width: 100%;
+    top: 66px;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.background-slideshow.bottom {
+    opacity: 0;
+    transition: opacity 1.3s ease-in-out;
+}
+
+.responsive-title {
+    font-family: "Brandon Grotesque Light", serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+@include media-breakpoint-up(sm) {
+    .responsive-title {
+        font-size: 2.5rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .responsive-title {
+        font-size: 3rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    header {
+        height: 100vh;
+        min-height: 650px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .responsive-title {
+        font-size: 3.5rem;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .responsive-title {
+        font-size: 4rem;
+    }
+}

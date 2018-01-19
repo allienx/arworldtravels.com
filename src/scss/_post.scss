@@ -1,0 +1,46 @@
+@import "bootstrap/scss/mixins/breakpoints";
+
+.post {
+    margin-top: 2.5rem;
+
+    .title {
+        color: #212529;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .summary {
+        display: block;
+        max-height: 75px;
+        overflow-y: hidden;
+    }
+
+    .read-more {
+        display: block;
+    }
+
+    @include media-breakpoint-up(sm) {
+        .read-more {
+            position: absolute;
+            left: 15px;
+            bottom: 0;
+        }
+    }
+}
+
+.post:first-child {
+    margin-top: 1.5rem;
+}
+
+.post:last-child {
+    margin-bottom: 2.5rem;
+}
+
+a.photo-album {
+    color: #212529;
+
+    &:hover {
+        color: #212529;
+    }
+}

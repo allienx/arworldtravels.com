@@ -1,0 +1,30 @@
+// Workaround issue where all the fonts after "sans-serif"
+// get removed when compiling sass -> css.
+// Narrowed this down to a cssnano() optimization.
+body, .markdown-body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        sans-serif;
+}
+
+.section-title {
+    margin-bottom: 0;
+    font-family: "Brandon Grotesque Light", sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .container.narrow {
+        max-width: 720px;
+    }
+}

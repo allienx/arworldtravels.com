@@ -1,0 +1,66 @@
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    background: url('../img/background-manarola.jpg') center center;
+    background-size: cover;
+
+    hr {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-weight: 300;
+    }
+
+    .title {
+        font-family: 'Peas and Carrots', serif;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 540px) {
+        .title {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        p {
+            font-size: 1.15rem;
+        }
+
+        .title {
+            font-size: 3rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        height: 100vh;
+        min-height: 650px;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .title {
+            font-size: 3.5rem;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        h1 {
+            font-size: 4rem;
+        }
+
+        .title {
+            font-size: 4rem;
+        }
+    }
+}

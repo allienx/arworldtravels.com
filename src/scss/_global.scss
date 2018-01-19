@@ -1,0 +1,17 @@
+.emoji {
+	margin-left: 4px;
+	margin-right: 9px;
+}
+
+.section-title {
+    font-family: "Peas and Carrots", sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .container.narrow {
+        max-width: 720px;
+    }
+}

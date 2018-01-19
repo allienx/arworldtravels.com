@@ -1,0 +1,16 @@
+.footer {
+    padding: 1.5rem 0;
+    color: #777777;
+    border-top: .05rem solid #e5e5e5;
+
+    #rachsBeans {
+        cursor: pointer;
+        display: inline-block;
+
+        &:hover {
+            #quote {
+                font-style: italic;
+            }
+        }
+    }
+}

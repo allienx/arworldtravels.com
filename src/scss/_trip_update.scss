@@ -1,0 +1,34 @@
+.trip-update {
+    .title {
+        color: #212529;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .summary {
+        display: block;
+        max-height: 75px;
+        overflow-y: hidden;
+    }
+
+    .read-more {
+        display: block;
+    }
+
+    @media (min-width: 576px) {
+        .read-more {
+            position: absolute;
+            left: 15px;
+            bottom: 0;
+        }
+    }
+}
+
+a.photo-album {
+    color: #212529;
+
+    &:hover {
+        color: #212529;
+    }
+}

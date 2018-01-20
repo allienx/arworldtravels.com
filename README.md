@@ -1,6 +1,6 @@
 # arworldtravels.com
 
-A travel site built with [Hugo](gohugo.io).
+A travel site built with [Hugo](http://gohugo.io).
 
 ## Local Development
 

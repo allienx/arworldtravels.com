@@ -46,4 +46,13 @@ $drawer-width: 275px;
             color: rgba(255, 255, 255, 0.75)
         }
     }
+
+    .title {
+        height: 70px;
+        line-height: 70px;
+        color: hsla(0, 0%, 100%, .5);
+        font-family: 'Peas and Carrots';
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
 }

@@ -11,16 +11,29 @@
 {{ partial "navigation-drawer.html" . }}
 {{ partial "navbar.html" . }}
 
-<header class="masthead text-center d-flex">
+<header class="masthead text-center d-flex mb-5">
   <div class="container my-auto">
     <div class="row">
       <div class="col-9 col-sm-8 col-md-6 mx-auto bg-light">
-        <div class="title">Al &amp; Rach</div>
-        <div class="title">World Travels</div>
+        <div class="responsive-title">Al &amp; Rach</div>
+        <div class="responsive-title">World Travels</div>
       </div>
     </div>
   </div>
 </header>
+
+<section class="container home mb-5">
+  <div class="row">
+    <div class="col-12 col-md-4 align-self-center">
+      <div class="responsive-title text-center d-md-none mb-3">Our Story</div>
+      <img class="img-fluid rounded mb-4" src="/img/who-we-are.jpg" />
+    </div>
+    <div class="col-12 offset-md-1 col-md-7">
+      <div class="responsive-title text-center d-none d-md-block">Our Story</div>
+      <p>We're Alex and Rachel. Just another couple in their twenties that decided to leave their stable lives and do some traveling. We think that at some point we all realize that life is too short and no one knows what the future holds. We found ourselves lucky enough with the opportunity to leave our jobs and explore the world. We had the mindset of <em>why wait?</em> We could wait for retirement or wait for some other perfect time in our lives to do a world trip like this but what's the point of waiting when we could do it now? We made this little site to document our travels so we could keep some friends and family updated on what we're up to (it's also a memento that we can look back on when our trip is over).</p>
+    </div>
+  </div>
+</section>
 
 {{ partial "footer.html" . }}
 {{ partial "scripts.html" . }}

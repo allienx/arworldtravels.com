@@ -16,7 +16,7 @@
       <h1>{{ .Title }}</h1>
       <div><small>{{ .Date.Format "Monday, January 2, 2006" }} at {{ .Date.Format "15:04" }} <a href="https://www.timeanddate.com/time/zones/{{ lower .Params.timezone }}" target="_blank">{{ .Params.timezone }}</a></small></div>
       <div><small>By: {{ .Params.author }} | {{ .WordCount }} words</small></div>
-      <img class="img-fluid my-4" src="/img/destinations/{{ .Params.albumimg }}.jpg" srcset="/img/destinations/{{ .Params.albumimg }}.jpg 1x, /img/destinations/{{ .Params.albumimg }}@2x.jpg 2x" alt="{{ .Params.albumtext }}" title="{{ .Params.albumtext }}">
+      <img class="img-fluid my-4" src="/assets/img/destinations/{{ .Params.albumimg }}.jpg" srcset="/assets/img/destinations/{{ .Params.albumimg }}.jpg 1x, /assets/img/destinations/{{ .Params.albumimg }}@2x.jpg 2x" alt="{{ .Params.albumtext }}" title="{{ .Params.albumtext }}">
     </div>
   </div>
   <div class="row">

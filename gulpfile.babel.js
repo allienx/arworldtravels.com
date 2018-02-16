@@ -36,7 +36,7 @@ gulp.task("css", () => (
   gulp.src("./src/scss/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(postcss(cssPlugins))
-    .pipe(gulp.dest("./dist/css"))
+    .pipe(gulp.dest("./dist/assets/css"))
     .pipe(browserSync.stream())
 ));
 

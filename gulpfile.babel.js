@@ -28,8 +28,8 @@ gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, hugoArgsPreview));
 
 // Build/production tasks
-gulp.task("build", ["css", "js"], (cb) => buildSite(cb, [], "production"));
-gulp.task("build-preview", ["css", "js"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
+gulp.task("build", ["favicon", "css", "js"], (cb) => buildSite(cb, [], "production"));
+gulp.task("build-preview", ["favicon", "css", "js"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
 
 // Compile SCSS with gulp-sass and PostCSS
 gulp.task("css", () => (
@@ -55,8 +55,13 @@ gulp.task("js", (cb) => {
   });
 });
 
+gulp.task("favicon", () => {
+  gulp.src("./src/favicon/*")
+    .pipe(gulp.dest("./dist"))
+});
+
 // Development server with browsersync
-gulp.task("server", ["hugo", "css", "js"], () => {
+gulp.task("server", ["hugo", "favicon", "css", "js"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"

@@ -13,4 +13,19 @@
             }
         }
     }
+
+    .westerkerk {
+        width: 267px;
+        height: 200px;
+        background-repeat: no-repeat;
+        transition: background 0.5s ease-in-out 0.25s;
+    }
+
+    .westerkerk.day {
+        background-image: url("/assets/img/day-n-night/westerkerk-day.jpg");
+    }
+
+    .westerkerk.night {
+        background-image: url("/assets/img/day-n-night/westerkerk-night.jpg");
+    }
 }

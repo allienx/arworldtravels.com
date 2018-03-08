@@ -43,3 +43,30 @@ $("#rachsBeans").click(function() {
     quoteElement.html("All out of beans!");
   }
 });
+
+const westerkerk = $(".westerkerk");
+let isNight = false;
+
+westerkerk.hover(night, day);
+
+westerkerk.on("touchstart", function() {
+  isNight = !isNight;
+
+  if (isNight) {
+    night();
+  } else {
+    day();
+  }
+});
+
+function day() {
+  isNight = false;
+  westerkerk.removeClass("night");
+  westerkerk.addClass("day");
+}
+
+function night() {
+  isNight = true;
+  westerkerk.removeClass("day");
+  westerkerk.addClass("night");
+}

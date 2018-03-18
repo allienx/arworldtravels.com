@@ -19,7 +19,7 @@ const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
 
 // PostCSS plugins
 const cssPlugins = [
-  autoprefixer({ browsers: ["last 2 versions"]}),
+  autoprefixer(),
   cssnano()
 ];
 
@@ -34,7 +34,7 @@ gulp.task("build-preview", ["favicon", "css", "js"], (cb) => buildSite(cb, hugoA
 // Compile SCSS with gulp-sass and PostCSS
 gulp.task("css", () => (
   gulp.src("./src/scss/*.scss")
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass({ includePaths: ["node_modules"] }).on("error", sass.logError))
     .pipe(postcss(cssPlugins))
     .pipe(gulp.dest("./dist/assets/css"))
     .pipe(browserSync.stream())

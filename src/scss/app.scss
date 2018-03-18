@@ -1,7 +1,12 @@
-@import "primer-markdown-10.1.0/index.scss";
+// Dependencies
+@import "bootstrap/scss/bootstrap";
+// TODO: check and see if sass compile error is fixed in node_modules/primer-markdown
+@import "primer-markdown-10.1.0/index";
+
+// Custom
 @import "navigation-drawer";
 @import "header";
 @import "navbar";
 @import "footer";
-@import "trip_update";
+@import "trip-update";
 @import "global";

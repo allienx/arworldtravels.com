@@ -1,7 +1,12 @@
-const webpack = require("webpack");
 const path = require("path");
+const webpack = require("webpack");
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+
+  externals: {
+    jquery: "jQuery"
+  },
 
   context: path.join(__dirname, "src"),
 
@@ -35,11 +40,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.ProvidePlugin({
-      "fetch": "imports-loader?this=>global!exports?global.fetch!whatwg-fetch"
-    })
-  ],
-
-  externals:  [/^vendor\/.+\.js$/]
+    new UglifyJSPlugin()
+  ]
 
 };

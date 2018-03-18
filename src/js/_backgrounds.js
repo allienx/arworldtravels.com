@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 let obj = {
   init
 };

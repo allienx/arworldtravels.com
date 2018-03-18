@@ -4,5 +4,6 @@
 .idea/workspace.xml
 
 node_modules/
+yarn-error.log
 
 dist/

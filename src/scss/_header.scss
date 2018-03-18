@@ -1,8 +1,11 @@
 header.masthead {
     padding-top: 10rem;
     padding-bottom: 10rem;
-    background: url('../img/background-manarola.jpg') center center;
+    background-image: url('../img/background-manarola.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+    transition: background-image 1s ease-in-out 0.15s;
 
     hr {
         margin-top: 30px;

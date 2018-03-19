@@ -1,91 +1,136 @@
+import { spawn } from "child_process";
+import HugoBin from "hugo-bin";
 import gulp from "gulp";
-import {spawn} from "child_process";
-import hugoBin from "hugo-bin";
-import gutil from "gulp-util";
 import sass from "gulp-sass";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
-import BrowserSync from "browser-sync";
-import watch from "gulp-watch";
 import webpack from "webpack";
-import webpackConfig from "./webpack.config";
+import BrowserSync from "browser-sync";
+import devConfig from "./webpack.dev.js";
+import prodConfig from "./webpack.prod.js";
 
 const browserSync = BrowserSync.create();
 
-// Hugo arguments
-const hugoArgsDefault = ["-d", "../dist", "-s", "hugo", "-v"];
-const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
+gulp.task("favicon", copyFavicon());
+gulp.task("favicon:prod", copyFavicon("prod"));
+gulp.task("js", bundleJS());
+gulp.task("js:prod", bundleJS("prod"));
+gulp.task("scss", compileCSS());
+gulp.task("scss:prod", compileCSS("prod"));
+gulp.task("hugo", runHugo());
+gulp.task("hugo:prod", runHugo("prod"));
 
-// PostCSS plugins
-const cssPlugins = [
-  autoprefixer(),
-  cssnano()
-];
+const devBuild = gulp.parallel("hugo", "js", "scss", "favicon");
+const prodBuild = gulp.parallel("hugo:prod", "js:prod", "scss:prod", "favicon:prod");
 
-// Development tasks
-gulp.task("hugo", (cb) => buildSite(cb));
-gulp.task("hugo-preview", (cb) => buildSite(cb, hugoArgsPreview));
+gulp.task("server", gulp.series(devBuild, startBrowserSync));
+gulp.task("deploy", prodBuild);
 
-// Build/production tasks
-gulp.task("build", ["favicon", "css", "js"], (cb) => buildSite(cb, [], "production"));
-gulp.task("build-preview", ["favicon", "css", "js"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
+function copyFavicon(mode) {
+  const path = mode === "prod" ? "dist" : "dev";
 
-// Compile SCSS with gulp-sass and PostCSS
-gulp.task("css", () => (
-  gulp.src("./src/scss/*.scss")
-    .pipe(sass({ includePaths: ["node_modules"] }).on("error", sass.logError))
-    .pipe(postcss(cssPlugins))
-    .pipe(gulp.dest("./dist/assets/css"))
-    .pipe(browserSync.stream())
-));
+  return function() {
+    return gulp.src("./src/favicon/*")
+    .pipe(gulp.dest(path));
+  }
+}
 
-// Compile Javascript
-gulp.task("js", (cb) => {
-  const myConfig = Object.assign({}, webpackConfig);
+function bundleJS(mode) {
+  let config = Object.assign({}, devConfig);
+  config.mode = "development";
 
-  webpack(myConfig, (err, stats) => {
-    if (err) throw new gutil.PluginError("webpack", err);
-    gutil.log("[webpack]", stats.toString({
-      colors: true,
-      progress: true
-    }));
-    browserSync.reload();
-    cb();
-  });
-});
+  if (mode === "prod") {
+    config = Object.assign({}, prodConfig);
+    config.mode = "production";
+  }
 
-gulp.task("favicon", () => {
-  gulp.src("./src/favicon/*")
-    .pipe(gulp.dest("./dist"))
-});
+  return function(done) {
+    webpack(config, (err, stats) => {
+      if (err) {
+        console.error(err.stack || err);
 
-// Development server with browsersync
-gulp.task("server", ["hugo", "favicon", "css", "js"], () => {
+        if (err.details) {
+          console.error(err.details);
+        }
+
+        return;
+      }
+
+      const info = stats.toJson();
+
+      if (stats.hasErrors()) {
+        console.error(info.errors);
+      }
+
+      if (stats.hasWarnings()) {
+        console.warn(info.warnings);
+      }
+
+      console.log(stats.toString({
+        colors: true,
+        progress: true
+      }));
+
+      browserSync.reload();
+      done();
+    });
+  }
+}
+
+function compileCSS(mode) {
+  let path = "dev/assets/css";
+  let cssPlugins = [
+    autoprefixer()
+  ];
+
+  if (mode === "prod") {
+    path = "dist/assets/css";
+    cssPlugins.push(cssnano());
+  }
+
+  return function() {
+    return gulp.src("./src/scss/*.scss")
+      .pipe(sass({ includePaths: ["node_modules"] }).on("error", sass.logError))
+      .pipe(postcss(cssPlugins))
+      .pipe(gulp.dest(path))
+      .pipe(browserSync.stream());
+  }
+}
+
+function runHugo(mode) {
+  let path = "../dev";
+  let args = null;
+
+  if (mode === "prod") {
+    path = "../dist";
+  }
+
+  args = ["-v", "-d", path, "-s", "hugo"];
+
+  return function(done) {
+    spawn(HugoBin, args, { stdio: "inherit" }).on("close", code => {
+      if (code === 0) {
+        browserSync.reload();
+        done();
+      } else {
+        browserSync.notify("Hugo build failed :(");
+        done("Hugo build failed.");
+      }
+    }).on("error", err => {
+      console.log(err);
+    });
+  }
+}
+
+function startBrowserSync() {
   browserSync.init({
     server: {
-      baseDir: "./dist"
+      baseDir: "dev"
     }
   });
 
-  watch("./src/js/**/*.js", () => { gulp.start(["js"]) });
-  watch("./src/scss/**/*.scss", () => { gulp.start(["css"]) });
-  watch("./hugo/**/*", () => { gulp.start(["hugo"]) });
-});
-
-// Run hugo and build the site
-function buildSite(cb, options, environment = "development") {
-  const args = options ? hugoArgsDefault.concat(options) : hugoArgsDefault;
-
-  process.env.NODE_ENV = environment;
-
-  return spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
-    if (code === 0) {
-      browserSync.reload();
-      cb();
-    } else {
-      browserSync.notify("Hugo build failed :(");
-      cb("Hugo build failed");
-    }
-  });
+  gulp.watch("src/js/*.js", bundleJS());
+  gulp.watch("src/scss/*.scss", compileCSS());
+  gulp.watch("hugo/**/*", runHugo());
 }

@@ -1,6 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 
@@ -12,12 +10,6 @@ module.exports = {
 
   entry: {
     app: ["./js/app"]
-  },
-
-  output: {
-    path: path.join(__dirname, "dist/assets/js"),
-    publicPath: "/",
-    filename: "[name].js"
   },
 
   module: {
@@ -37,10 +29,6 @@ module.exports = {
         query: {cacheDirectory: true}
       }
     ]
-  },
-
-  plugins: [
-    new UglifyJSPlugin()
-  ]
+  }
 
 };

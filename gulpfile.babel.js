@@ -31,7 +31,7 @@ gulp.task("deploy", prodBuild);
 function copyAssets(mode) {
   const path = mode === "prod" ? "dist" : "dev";
 
-  return function() {
+  return function copyAssets() {
     const favicon = gulp.src("src/favicon/*")
       .pipe(gulp.dest(path));
 
@@ -54,7 +54,7 @@ function bundleJS(mode) {
     config.mode = "production";
   }
 
-  return function(done) {
+  return function bundleJS(done) {
     webpack(config, (err, stats) => {
       if (err) {
         console.error(err.stack || err);
@@ -98,7 +98,7 @@ function compileCSS(mode) {
     cssPlugins.push(cssnano());
   }
 
-  return function() {
+  return function compileCSS() {
     return gulp.src("./src/scss/*.scss")
       .pipe(sass({ includePaths: ["node_modules"] }).on("error", sass.logError))
       .pipe(postcss(cssPlugins))
@@ -117,7 +117,7 @@ function runHugo(mode) {
 
   args = ["-v", "-d", path, "-s", "src/hugo"];
 
-  return function(done) {
+  return function runHugo(done) {
     spawn(HugoBin, args, { stdio: "inherit" }).on("close", code => {
       if (code === 0) {
         browserSync.reload();

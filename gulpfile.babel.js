@@ -5,6 +5,7 @@ import sass from "gulp-sass";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
+import merge from "merge-stream";
 import webpack from "webpack";
 import BrowserSync from "browser-sync";
 import devConfig from "./webpack.dev.js";
@@ -12,8 +13,8 @@ import prodConfig from "./webpack.prod.js";
 
 const browserSync = BrowserSync.create();
 
-gulp.task("favicon", copyFavicon());
-gulp.task("favicon:prod", copyFavicon("prod"));
+gulp.task("assets", copyAssets());
+gulp.task("assets:prod", copyAssets("prod"));
 gulp.task("js", bundleJS());
 gulp.task("js:prod", bundleJS("prod"));
 gulp.task("scss", compileCSS());
@@ -21,18 +22,26 @@ gulp.task("scss:prod", compileCSS("prod"));
 gulp.task("hugo", runHugo());
 gulp.task("hugo:prod", runHugo("prod"));
 
-const devBuild = gulp.parallel("hugo", "js", "scss", "favicon");
-const prodBuild = gulp.parallel("hugo:prod", "js:prod", "scss:prod", "favicon:prod");
+const devBuild = gulp.parallel("hugo", "assets", "js", "scss");
+const prodBuild = gulp.parallel("hugo:prod", "assets:prod", "js:prod", "scss:prod");
 
 gulp.task("server", gulp.series(devBuild, startBrowserSync));
 gulp.task("deploy", prodBuild);
 
-function copyFavicon(mode) {
+function copyAssets(mode) {
   const path = mode === "prod" ? "dist" : "dev";
 
   return function() {
-    return gulp.src("./src/favicon/*")
-    .pipe(gulp.dest(path));
+    const favicon = gulp.src("src/favicon/*")
+      .pipe(gulp.dest(path));
+
+    const fonts = gulp.src("src/fonts/*")
+      .pipe(gulp.dest(path + "/assets/fonts"));
+
+    const img = gulp.src("src/img/**/*")
+      .pipe(gulp.dest(path + "/assets/img"));
+
+    return merge(favicon, fonts, img);
   }
 }
 
@@ -99,14 +108,14 @@ function compileCSS(mode) {
 }
 
 function runHugo(mode) {
-  let path = "../dev";
+  let path = "../../dev";
   let args = null;
 
   if (mode === "prod") {
-    path = "../dist";
+    path = "../../dist";
   }
 
-  args = ["-v", "-d", path, "-s", "hugo"];
+  args = ["-v", "-d", path, "-s", "src/hugo"];
 
   return function(done) {
     spawn(HugoBin, args, { stdio: "inherit" }).on("close", code => {
@@ -132,5 +141,5 @@ function startBrowserSync() {
 
   gulp.watch("src/js/*.js", bundleJS());
   gulp.watch("src/scss/*.scss", compileCSS());
-  gulp.watch("hugo/**/*", runHugo());
+  gulp.watch("src/hugo/**/*", runHugo());
 }

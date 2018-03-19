@@ -1,7 +1,7 @@
 header.masthead {
     padding-top: 10rem;
     padding-bottom: 10rem;
-    background-image: url('../img/background-manarola.jpg');
+    background-image: url("../img/background-manarola.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -45,7 +45,7 @@ header.masthead {
 }
 
 .responsive-title {
-    font-family: 'Peas and Carrots', serif;
+    font-family: "Brandon Grotesque Light", serif;
     font-size: 2rem;
     text-transform: uppercase;
 }

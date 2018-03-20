@@ -1,15 +1,7 @@
-title = "AR World Travels"
+title   = "AR World Travels"
 baseURL = "/"
 
 languageCode = "en-us"
 languageLang = "en"
 
-[taxonomies]
-destination = "destinations"
-
-[permalinks]
-journal = "/destinations/:slug/"
-
-[outputs]
-home = ["HTML"]
-page = ["HTML"]
+disableKinds = ["taxonomy", "taxonomyTerm"]

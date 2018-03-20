@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{{ .Title }} | AR World Travels</title>
+
+  {{ partial "head.html" . }}
+</head>
+<body>
+
+{{ partial "navigation-drawer.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container narrow mt-4">
+  <div class="row">
+    <div class="col">
+      <h3 class="section-title">{{ .Title }}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container narrow">
+  {{ range .Pages }}
+
+  {{ partial "post-summary.html" . }}
+
+  {{ end }}
+</div>
+
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 import { spawn } from "child_process";
+import del from "del";
 import gulp from "gulp";
 import sass from "gulp-sass";
 import postcss from "gulp-postcss";
@@ -15,6 +16,8 @@ import prodConfig from "./webpack.prod.js";
 
 const browserSync = BrowserSync.create();
 
+gulp.task("clean", () => del("dev"));
+gulp.task("clean:prod", () => del("dist"));
 gulp.task("js", bundleJS());
 gulp.task("js:prod", bundleJS("prod"));
 gulp.task("scss", compileCSS());
@@ -24,12 +27,10 @@ gulp.task("hugo:prod", runHugo("prod"));
 gulp.task("assets", copyAssets());
 gulp.task("assets:prod", copyAssets("prod"));
 gulp.task("hash", gulp.series(hashAssets, rewriteAssets));
-
-const devBuild = gulp.parallel("js", "scss", "hugo", "assets");
-const prodBuild = gulp.parallel("js:prod", "scss:prod", "hugo:prod", "assets:prod");
-
-gulp.task("server", gulp.series(devBuild, startBrowserSync));
-gulp.task("deploy", gulp.series(prodBuild, "hash"));
+gulp.task("build", gulp.parallel("js", "scss", "hugo", "assets"));
+gulp.task("build:prod", gulp.parallel("js:prod", "scss:prod", "hugo:prod", "assets:prod"));
+gulp.task("server", gulp.series("clean", "build", startBrowserSync));
+gulp.task("deploy", gulp.series("clean:prod", "build:prod", "hash"));
 
 function bundleJS(mode) {
   let config = Object.assign({}, devConfig);

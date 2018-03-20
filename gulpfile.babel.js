@@ -1,49 +1,35 @@
 import { spawn } from "child_process";
-import HugoBin from "hugo-bin";
 import gulp from "gulp";
 import sass from "gulp-sass";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import merge from "merge-stream";
+import rev from "gulp-rev";
+import revReplace from "gulp-rev-replace";
 import webpack from "webpack";
 import BrowserSync from "browser-sync";
+import HugoBin from "hugo-bin";
 import devConfig from "./webpack.dev.js";
 import prodConfig from "./webpack.prod.js";
 
 const browserSync = BrowserSync.create();
 
-gulp.task("assets", copyAssets());
-gulp.task("assets:prod", copyAssets("prod"));
 gulp.task("js", bundleJS());
 gulp.task("js:prod", bundleJS("prod"));
 gulp.task("scss", compileCSS());
 gulp.task("scss:prod", compileCSS("prod"));
 gulp.task("hugo", runHugo());
 gulp.task("hugo:prod", runHugo("prod"));
+gulp.task("assets", copyAssets());
+gulp.task("assets:prod", copyAssets("prod"));
+gulp.task("hash", gulp.series(hashAssets, rewriteAssets));
 
-const devBuild = gulp.parallel("hugo", "assets", "js", "scss");
-const prodBuild = gulp.parallel("hugo:prod", "assets:prod", "js:prod", "scss:prod");
+const devBuild = gulp.parallel("js", "scss", "hugo", "assets");
+const prodBuild = gulp.parallel("js:prod", "scss:prod", "hugo:prod", "assets:prod");
 
 gulp.task("server", gulp.series(devBuild, startBrowserSync));
-gulp.task("deploy", prodBuild);
-
-function copyAssets(mode) {
-  const path = mode === "prod" ? "dist" : "dev";
-
-  return function copyAssets() {
-    const favicon = gulp.src("src/favicon/*")
-      .pipe(gulp.dest(path));
-
-    const fonts = gulp.src("src/fonts/*")
-      .pipe(gulp.dest(path + "/assets/fonts"));
-
-    const img = gulp.src("src/img/**/*")
-      .pipe(gulp.dest(path + "/assets/img"));
-
-    return merge(favicon, fonts, img);
-  }
-}
+gulp.task("deploy", gulp.series(prodBuild, "hash"));
 
 function bundleJS(mode) {
   let config = Object.assign({}, devConfig);
@@ -99,7 +85,7 @@ function compileCSS(mode) {
   }
 
   return function compileCSS() {
-    return gulp.src("./src/scss/*.scss")
+    return gulp.src("src/scss/*.scss")
       .pipe(sass({ includePaths: ["node_modules"] }).on("error", sass.logError))
       .pipe(postcss(cssPlugins))
       .pipe(gulp.dest(path))
@@ -130,6 +116,39 @@ function runHugo(mode) {
       console.log(err);
     });
   }
+}
+
+function copyAssets(mode) {
+  const path = mode === "prod" ? "dist" : "dev";
+
+  return function copyAssets() {
+    const favicon = gulp.src("src/favicon/*")
+      .pipe(gulp.dest(path));
+
+    const fonts = gulp.src("src/fonts/*")
+      .pipe(gulp.dest(path + "/assets/fonts"));
+
+    const img = gulp.src("src/img/**/*")
+      .pipe(gulp.dest(path + "/assets/img"));
+
+    return merge(favicon, fonts, img);
+  }
+}
+
+function hashAssets() {
+  return gulp.src(["dist/assets/**/*.js", "dist/assets/**/*.css", "!dist/assets/**/*.map"])
+    .pipe(rev())
+    .pipe(gulp.dest("dist/assets"))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest("dist/assets"));
+}
+
+function rewriteAssets() {
+  const revManifest = gulp.src("dist/assets/rev-manifest.json");
+
+  return gulp.src("dist/**/*.html")
+    .pipe(revReplace({ manifest: revManifest }))
+    .pipe(gulp.dest("dist"));
 }
 
 function startBrowserSync() {

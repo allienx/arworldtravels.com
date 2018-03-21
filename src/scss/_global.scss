@@ -1,3 +1,18 @@
+// Workaround issue where fonts after "sans-serif" get removed when compiling sass -> css.
+body {
+  font-family:
+  	-apple-system,
+  	BlinkMacSystemFont,
+  	"Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+}
+
 .emoji {
 	margin: 0 0.25rem;
 }

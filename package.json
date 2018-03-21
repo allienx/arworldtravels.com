@@ -1,7 +1,7 @@
 {
   "name": "arworldtravels.com",
   "version": "1.0.0",
-  "description": "A travel site built with Hugo. Hosted by Netlify.",
+  "description": "A travel site built with Hugo.",
   "repository": "https://github.com/allienx/arworldtravels.com",
   "scripts": {
     "start": "gulp server",

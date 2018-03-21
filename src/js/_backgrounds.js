@@ -17,14 +17,18 @@ let urls = [
   "/assets/img/background-hoi-an.jpg",
   "/assets/img/background-lucca.jpg",
   "/assets/img/background-matterhorn.jpg",
-  "/assets/img/background-milford-sound.jpg",
-  "/assets/img/background-plitvice.jpg"
+  "/assets/img/background-milford-sound.jpg"
 ];
 
 function init() {
   timerID = setInterval(function() {
     changeBackground();
   }, delay);
+
+  // pre-load background images for a smooth transition
+  for (var i = urls.length - 1; i >= 0; i--) {
+    new Image().src = urls[i];
+  }
 }
 
 function changeBackground() {

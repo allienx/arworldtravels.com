@@ -5,7 +5,7 @@ let obj = {
 };
 
 const header = $("header.masthead");
-const delay = 6000;
+const timerLengthMS = 5000;
 
 let timerID = null;
 let usedUrls = [];
@@ -23,7 +23,7 @@ let urls = [
 function init() {
   timerID = setInterval(function() {
     changeBackground();
-  }, delay);
+  }, timerLengthMS);
 
   // pre-load background images for a smooth transition
   for (var i = urls.length - 1; i >= 0; i--) {

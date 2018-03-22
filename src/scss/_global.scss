@@ -1,5 +1,7 @@
-// Workaround issue where fonts after "sans-serif" get removed when compiling sass -> css.
-body {
+// Workaround issue where all the fonts after "sans-serif"
+// get removed when compiling sass -> css.
+// Narrowed this down to a cssnano() optimization.
+body, .markdown-body {
   font-family:
   	-apple-system,
   	BlinkMacSystemFont,

@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-let obj = {
+export default {
   init
 };
 
@@ -35,5 +35,3 @@ function getNextBean() {
 
   return beans.pop();
 }
-
-export default obj;

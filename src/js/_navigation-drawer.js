@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-let obj = {
+export default {
   init
 };
 
@@ -27,5 +27,3 @@ function init() {
     menuDrawer.css("transform", "translate(285px, 0px)");
   });
 }
-
-export default obj;

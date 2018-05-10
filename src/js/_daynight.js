@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-let obj = {
+export default {
   init
 };
 
@@ -32,5 +32,3 @@ function night() {
   westerkerk.removeClass("day");
   westerkerk.addClass("night");
 }
-
-export default obj

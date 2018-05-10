@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-let obj = {
+export default {
   init
 };
 
@@ -32,5 +32,3 @@ function endHover(e) {
 
   target.text($.data(target.get(0), "text"));
 }
-
-export default obj;

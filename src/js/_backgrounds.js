@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-let obj = {
+export default {
   init
 };
 
@@ -21,12 +21,10 @@ let urls = [
 ];
 
 function init() {
-  timerID = setInterval(function() {
-    changeBackground();
-  }, timerLengthMS);
+  timerID = setInterval(changeBackground, timerLengthMS);
 
   // pre-load background images for a smooth transition
-  for (var i = urls.length - 1; i >= 0; i--) {
+  for (let i = urls.length - 1; i >= 0; i--) {
     new Image().src = urls[i];
   }
 }
@@ -52,5 +50,3 @@ function getRandomInt(min, max) {
 
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
-export default obj;

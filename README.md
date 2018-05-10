@@ -1,6 +1,4 @@
-# arworldtravels.com
-
-![arworldtravels-snickers](https://s20.postimg.org/59z1eaksd/arworldtravels-snickers.png)
+![arworldtravels-brand](brand/arworldtravels-brand.svg)
 
 My girlfriend originally built a travel "blog" with [Wix](https://www.wix.com/) to keep some family and friends updated while we were doing some long-term traveling. It worked fine and was easy to update along the way. However, to connect a custom domain to the site we had to pay for a premium plan. I thought it would be nice to keep the site up and running even after our trip was over but didn't want to keep paying for the premium plan. So I saw this as an opportunity to try and re-build the site manually and host it for free (the Wix site was also bloated and ran slow on bad networks).
 

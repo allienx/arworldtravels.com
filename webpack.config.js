@@ -2,14 +2,10 @@ const path = require("path");
 
 module.exports = {
 
-  externals: {
-    jquery: "jQuery"
-  },
-
   context: path.join(__dirname, "src"),
 
   entry: {
-    app: ["./js/app"]
+    app: "./js/app.js"
   },
 
   module: {
@@ -29,6 +25,20 @@ module.exports = {
         query: { cacheDirectory: true }
       }
     ]
+  },
+
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        // Override some of the default 'vendors' behavior for the SplitChunksPlugin.
+        vendors: {
+          chunks: "initial",
+          name: "vendor",
+          test: /node_modules/,
+          enforce: true
+        }
+      }
+    }
   }
 
 };

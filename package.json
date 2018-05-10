@@ -10,8 +10,7 @@
   "author": "Alex Lin",
   "license": "MIT",
   "browserslist": [
-    "> 0.5%",
-    "last 2 versions"
+    "defaults"
   ],
   "dependencies": {
     "bootstrap": "4.0.0",
@@ -21,14 +20,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.1.0",
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.0",
-    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
-    "babel-plugin-transform-class-properties": "^6.10.2",
-    "babel-plugin-transform-object-assign": "^6.8.0",
-    "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-preset-env": "1.6.1",
-    "babel-register": "^6.11.6",
+    "babel-preset-env": "1.7.0",
     "browser-sync": "^2.23.0",
     "css-loader": "^0.28.2",
     "cssnano": "^3.10.0",
@@ -45,7 +39,7 @@
     "merge-stream": "^1.0.1",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "url-loader": "^1.0.0",
-    "webpack": "^4.1.0",
+    "webpack": "^4.8.1",
     "webpack-merge": "^4.1.2"
   }
 }

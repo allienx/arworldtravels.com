@@ -33,13 +33,7 @@ gulp.task("server", gulp.series("clean", "build", startBrowserSync));
 gulp.task("deploy", gulp.series("clean:prod", "build:prod", "hash"));
 
 function bundleJS(mode) {
-  let config = Object.assign({}, devConfig);
-  config.mode = "development";
-
-  if (mode === "prod") {
-    config = Object.assign({}, prodConfig);
-    config.mode = "production";
-  }
+  let config = Object.assign({}, mode === "prod" ? prodConfig : devConfig);
 
   return function bundleJS(done) {
     webpack(config, (err, stats) => {

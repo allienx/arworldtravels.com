@@ -1,6 +1,8 @@
 @import "bootstrap/scss/mixins/breakpoints";
 
-.post-preview {
+.post {
+    margin-top: 2.5rem;
+
     .title {
         color: #212529;
         font-size: 1.5rem;
@@ -25,6 +27,14 @@
             bottom: 0;
         }
     }
+}
+
+.post:first-child {
+    margin-top: 1.5rem;
+}
+
+.post:last-child {
+    margin-bottom: 2.5rem;
 }
 
 a.photo-album {

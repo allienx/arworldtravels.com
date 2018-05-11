@@ -6,9 +6,9 @@
 @import "primer-markdown/build/build";
 
 // Custom
-@import "header";
 @import "navbar";
-@import "footer";
 @import "navigation-drawer";
-@import "post-preview";
+@import "header";
+@import "post";
+@import "footer";
 @import "global";

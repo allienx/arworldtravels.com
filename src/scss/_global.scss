@@ -2,21 +2,21 @@
 // get removed when compiling sass -> css.
 // Narrowed this down to a cssnano() optimization.
 body, .markdown-body {
-  font-family:
-  	-apple-system,
-  	BlinkMacSystemFont,
-  	"Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    sans-serif;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        sans-serif;
 }
 
 .emoji {
-	margin: 0 0.25rem;
+    margin: 0 0.25rem;
 }
 
 .section-title {

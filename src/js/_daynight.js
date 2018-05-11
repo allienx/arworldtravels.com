@@ -4,13 +4,11 @@ export default {
   init
 };
 
-const westerkerk = $(".westerkerk");
+const westerkerkNight = $(".westerkerk.night");
 let isNight = false;
 
 function init() {
-  westerkerk.hover(night, day);
-
-  westerkerk.on("touchstart", function() {
+  westerkerkNight.on("touchstart", function() {
     isNight = !isNight;
 
     if (isNight) {
@@ -23,12 +21,10 @@ function init() {
 
 function day() {
   isNight = false;
-  westerkerk.removeClass("night");
-  westerkerk.addClass("day");
+  westerkerkNight.css("opacity", "0");
 }
 
 function night() {
   isNight = true;
-  westerkerk.removeClass("day");
-  westerkerk.addClass("night");
+  westerkerkNight.css("opacity", "1");
 }

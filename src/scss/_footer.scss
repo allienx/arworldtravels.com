@@ -1,25 +1,52 @@
+@import "bootstrap/scss/mixins/breakpoints";
+
 .footer {
     padding: 1.5rem 0;
     color: #777777;
     border-top: .05rem solid #e5e5e5;
+}
 
-    #rachsBeans {
-        cursor: pointer;
-        display: inline-block;
+#rachsBeans {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.westerkerk {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 267px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.westerkerk.night {
+    opacity: 0;
+    transition: opacity 1.0s ease-in-out;
+
+    &:hover {
+        opacity: 1  ;
     }
+}
 
+// add spacing to bottom of absolutely position element
+.westerkerk.night::after {
+    position: absolute;
+    content: "";
+    bottom: -1.5rem;
+    height: 1.5rem;
+    width: 1px;
+}
+
+@include media-breakpoint-down(sm) {
     .westerkerk {
-        width: 267px;
-        height: 200px;
-        background-repeat: no-repeat;
-        transition: background-image 1.25s ease-in-out;
-    }
-
-    .westerkerk.day {
-        background-image: url("/assets/img/day-n-night/westerkerk-day.jpg");
-    }
-
-    .westerkerk.night {
-        background-image: url("/assets/img/day-n-night/westerkerk-night.jpg");
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

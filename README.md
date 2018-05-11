@@ -34,19 +34,12 @@ Install dependencies.
 yarn install
 ```
 
-Build site and start server (outputs to `dev/`).
+Install `gulp-cli` globally to run tasks.
 
 ```sh
-yarn start
-```
-
-Other development tasks can be ran with gulp.
-
-```sh
-# Install gulp globally.
 yarn global add gulp-cli
 
-# Build site and start server. Outputs to dev/
+# Build site and start a dev server. Outputs to dev/
 gulp server
 
 # Run production build. Outputs to dist/

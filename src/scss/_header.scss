@@ -1,47 +1,25 @@
-header.masthead {
+@import "bootstrap/scss/mixins/breakpoints";
+
+header {
+    position: relative;
     padding-top: 10rem;
     padding-bottom: 10rem;
-    background-image: url("../img/background-manarola.jpg");
+}
+
+.background-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: background-image 1.5s ease-in-out 0.5s;
+}
 
-    hr {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-weight: 300;
-    }
-
-    @media (min-width: 768px) {
-        p {
-            font-size: 1.15rem;
-        }
-    }
-
-    @media (min-width: 992px) {
-        height: 100vh;
-        min-height: 650px;
-        padding-top: 0;
-        padding-bottom: 0;
-
-        h1 {
-            font-size: 3rem;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        h1 {
-            font-size: 4rem;
-        }
-    }
+.background-slideshow.bottom {
+    opacity: 0;
+    transition: opacity 1.3s ease-in-out;
 }
 
 .responsive-title {
@@ -50,25 +28,32 @@ header.masthead {
     text-transform: uppercase;
 }
 
-@media (min-width: 540px) {
+@include media-breakpoint-up(sm) {
     .responsive-title {
         font-size: 2.5rem;
     }
 }
 
-@media (min-width: 768px) {
+@include media-breakpoint-up(md) {
     .responsive-title {
         font-size: 3rem;
     }
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
+    header {
+        height: 100vh;
+        min-height: 650px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
     .responsive-title {
         font-size: 3.5rem;
     }
 }
 
-@media (min-width: 1200px) {
+@include media-breakpoint-up(xl) {
     .responsive-title {
         font-size: 4rem;
     }

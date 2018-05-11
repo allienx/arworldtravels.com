@@ -21,7 +21,6 @@ const transitionDurationMS = 1300;
 
 let isTopSlideShowing = true;
 let timerID = null;
-let usedUrls = [];
 let urls = [
   "/assets/img/background-berlin.jpg",
   "/assets/img/background-bovec.jpg",
@@ -33,8 +32,9 @@ let urls = [
   "/assets/img/background-milford-sound.jpg",
   "/assets/img/background-manarola.jpg"
 ];
+let usedUrls = [urls.pop()];
 
-topSlide.css("background-image", "url(" + urls.pop() + ")");
+topSlide.css("background-image", "url(" + usedUrls[0] + ")");
 bottomSlide.css("background-image", "url(" + getRandomUrl() + ")");
 
 function init() {

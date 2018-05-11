@@ -3,15 +3,8 @@
   "version": "1.0.0",
   "description": "A travel site built with Hugo and hosted by Netlify.",
   "repository": "https://github.com/allienx/arworldtravels.com",
-  "scripts": {
-    "start": "gulp server",
-    "build": "gulp deploy"
-  },
   "author": "Alex Lin",
   "license": "MIT",
-  "browserslist": [
-    "defaults"
-  ],
   "dependencies": {
     "bootstrap": "4.0.0",
     "jquery": "1.9.1 - 3",

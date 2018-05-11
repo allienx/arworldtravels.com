@@ -35,7 +35,7 @@ let urls = [
 let usedUrls = [urls.pop()];
 
 topSlide.css("background-image", "url(" + usedUrls[0] + ")");
-bottomSlide.css("background-image", "url(" + getRandomUrl() + ")");
+setTimeout(() => bottomSlide.css("background-image", "url(" + getRandomUrl() + ")"), transitionDurationMS);
 
 function init() {
   timerID = setInterval(changeBackground, timerLengthMS);

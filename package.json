@@ -2,6 +2,7 @@
   "name": "arworldtravels.com",
   "version": "1.0.0",
   "description": "A travel site built with Hugo and hosted by Netlify.",
+  "private": true,
   "repository": "https://github.com/allienx/arworldtravels.com",
   "author": "Alex Lin",
   "license": "MIT",

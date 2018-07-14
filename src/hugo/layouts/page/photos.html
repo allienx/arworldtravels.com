@@ -23,7 +23,7 @@
     {{ range .Site.Pages }}
     {{ if and (eq .Type "post") (isset .Params "albumlink") }}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-4">
-      <a class="photo-album" href="{{ .Params.albumlink }}" target="_blank">
+      <a class="photo-album" href="{{ .Params.albumlink }}" target="_blank" rel="noopener noreferrer">
         <div class="card text-center">
           <img class="card-img-top" src="/assets/img/destinations/{{ .Params.albumimg }}.jpg" alt="{{ .Params.albumtext }}">
 

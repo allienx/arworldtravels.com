@@ -8,7 +8,7 @@ timezone = "NZDT"
 author = "Rach & Al"
 albumimg = "28-north-island-nz"
 albumtext = "Hot Water Beach, Coromandel, New Zealand"
-albumlink = "http://pico.li/OvzO"
+albumlink = "http://picourls.com/OvzO"
 +++
 
 The final ten days of our trip were spent on the North Island of NZ. This island holds most of the population of New Zealand (which is only about four million in total) and is more known for its towns and cities rather than scenery. Because of this, we opted to rent a car and stay in Airbnbs and budget hotels rather than continue in our minivan. While we missed being in nature, it was nice to sleep in a proper bed.

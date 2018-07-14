@@ -8,7 +8,7 @@ timezone = "ICT"
 author = "Rach"
 albumimg = "19-hoi-an"
 albumtext = "Hoi An, Vietnam"
-albumlink = "http://pico.li/O4gM"
+albumlink = "http://picourls.com/O4gM"
 +++
 
 Well a lot of my prior opinions and feelings about Vietnam have made a 180 degree turn. We have spent the last six nights in a small, ancient town on the central coast of Vietnam called Hoi An (used to be a big shipping port). Several people had told us about this town as being one of their favorites and it’s easy to see why.

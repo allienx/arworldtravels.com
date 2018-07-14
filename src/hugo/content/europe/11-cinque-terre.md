@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Rach"
 albumimg = "11-cinque-terre"
 albumtext = "Monterosso, Cinque Terre, Italy"
-albumlink = "http://pico.li/MXpM"
+albumlink = "http://picourls.com/MXpM"
 +++
 
 Al and I were sad to leave Lena and her family in Ravensburg as we had to re-learn how to take care of ourselves (thanks again for spoiling us Lena & parents), but we were looking forward to visiting Italy, the country we will probably spend the most time in. We prepared for another long travel day but didn’t anticipate train delays and missing connections. Lena drove us to the train station in her town but there ended up being a 40 minute delay (supposedly this wasn’t out of the ordinary for this train) so she graciously but quickly drove us to a neighboring town so we could catch a ferry to take a different train. All in all, we ended up taking SEVEN trains and one ferry to get to Como, but we made it! On our last train switch we passed through the town of Lugano which is actually in Switzerland but basically felt like Italy. It was interesting passing from Swiss to Italian trains as we automatically felt cultural differences (Swiss trains being much nicer).

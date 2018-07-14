@@ -8,7 +8,7 @@ timezone = "ICT"
 author = "Rach"
 albumimg = "18-saigon"
 albumtext = "Vinh Trang, Vietnam"
-albumlink = "http://pico.li/apQM"
+albumlink = "http://picourls.com/apQM"
 +++
 
 Well we wanted culture shock and we got it! I am still processing the last six days and everything we saw/ate/heard/felt. I am going to do my best to relay it all so this might be another long one…

@@ -8,7 +8,7 @@ timezone = "ICT"
 author = "Rach"
 albumimg = "23-siem-reap"
 albumtext = "Pre Rup, Angkor, Siem Reap, Cambodia"
-albumlink = "http://pico.li/1A0O"
+albumlink = "http://picourls.com/1A0O"
 +++
 
 Happy 2018! We have spent the last four nights in Siem Reap, Cambodia exploring the ancient temples of Angkor, sweating like crazy, dodging tuk tuks, and ringing in 2018.

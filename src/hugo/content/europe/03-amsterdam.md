@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Rach"
 albumimg = "03-amsterdam"
 albumtext = "Canals, Amsterdam"
-albumlink = "http://pico.li/1ZpM"
+albumlink = "http://picourls.com/1ZpM"
 +++
 
 We Love Amsterdam! It is definitely a more chaotic city, but it has a lot of charm. It reminded me of a combination of Rome and Venice. Navigating the streets is a bit crazy because at every intersection there are bikes, mopeds, trams, buses and when you get in their way they'll let you know.

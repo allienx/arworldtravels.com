@@ -8,7 +8,7 @@ timezone = "CET"
 author = "Rach"
 albumimg = "14-castagneto-2"
 albumtext = "Janice"
-albumlink = "http://pico.li/aDvO"
+albumlink = "http://picourls.com/aDvO"
 +++
 
 Sadly, our time in Tuscany at our Workaway has come to an end. In total, we ended up staying with Chicca and her family for 2 1/2 weeks, but it felt like so much longer. Although it went by fast, we feel like we experienced the Italian way of life (in Tuscany at least) - specifically, a more slow paced, relaxed, generous lifestyle where working was more about passion than anything else. We took away so many Italian cooking tips which we can’t wait to share with our family and friends and for the first time on our trip, we experienced pure relaxation (we had a little too much time on our hands). What started as an out of our comfort zone, somewhat awkward situation where we constantly asked what we could do to help, ended with us feeling at home, and knowing our tasks and way around the house.

@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Al"
 albumimg = "10-switzerland"
 albumtext = "First, Interlaken, Switzerland"
-albumlink = "http://pico.li/OBzO"
+albumlink = "http://picourls.com/OBzO"
 +++
 
 Hey y’all it’s Alex again! Since I had never been to Switzerland we decided that I’ll handle the Swiss post. In short, Switzerland is as beautiful as the pictures, but more expensive than we had thought! Although, it was definitely worth it and there are always ways to save to money. Also, the Swiss Franc is just about a 1:1 exchange with the US dollar so that made it easy when looking at the price of everything.

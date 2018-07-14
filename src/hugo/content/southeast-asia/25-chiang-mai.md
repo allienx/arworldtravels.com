@@ -8,7 +8,7 @@ timezone = "ICT"
 author = "Rach"
 albumimg = "25-chiang-mai"
 albumtext = "Karen Elephant Habitat, Chiang Mai, Thailand"
-albumlink = "http://pico.li/O20a"
+albumlink = "http://picourls.com/O20a"
 +++
 
 Hello from Chiang Mai! We have spent the last seven nights in Thailand’s second largest city and one of the most visited Northern cities by tourists. It is also home to 300 Buddhist temples and basically felt like a smaller version of Bangkok. Prior to arriving, I had heard great things about Chiang Mai from several friends who had lived or studied abroad there so I was really looking forward to it. But unfortunately, our time in Chiang Mai got off to a rough start…

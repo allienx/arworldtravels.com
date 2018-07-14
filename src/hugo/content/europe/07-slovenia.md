@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Rach"
 albumimg = "07-slovenia"
 albumtext = "Bovec River, Slovenia"
-albumlink = "http://pico.li/O9R1"
+albumlink = "http://picourls.com/O9R1"
 +++
 
 Slovenia is a hidden gem! Very untouched and less touristy then the other countries we have been to. We took the train from Budapest to the capital city of Ljublijana (pronounced LUBE-LEE-YAWNAH) but in doing so we had our first major “oh shit” moment. We got to the train station early, per usual, in Budapest and were waiting at the track for our train. We hopped on a train that arrived a couple minutes early since in the past, our international trains had arrived early. The train seemed older, smaller, and empty. Something felt wrong right when we got on but it started to move thirty seconds after we got on. We asked the ticket guy if the train was heading to Ljubljana and he shook his head no. Al and I looked at each other in panic as to how we could have gotten on the wrong train. But our panic subsided when the ticket guy told us this train had the same first stop as the Ljubljana one so we could just get off and switch trains. Thank goodness! I’m not sure what we would’ve done otherwise. The rest of the train ride (eight hours in total) went smooth.

@@ -1,13 +1,16 @@
 import { spawn } from "child_process";
 import del from "del";
 import gulp from "gulp";
+import sourcemaps from "gulp-sourcemaps";
 import sass from "gulp-sass";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
-import merge from "merge-stream";
+import gulpif from "gulp-if";
 import rev from "gulp-rev";
-import revReplace from "gulp-rev-replace";
+import revFormat from "gulp-rev-format";
+import revRewrite from "gulp-rev-rewrite";
+import merge from "merge-stream";
 import webpack from "webpack";
 import BrowserSync from "browser-sync";
 import HugoBin from "hugo-bin";
@@ -24,16 +27,18 @@ gulp.task("scss", compileCSS());
 gulp.task("scss:prod", compileCSS("prod"));
 gulp.task("hugo", runHugo());
 gulp.task("hugo:prod", runHugo("prod"));
-gulp.task("assets", copyAssets());
-gulp.task("assets:prod", copyAssets("prod"));
-gulp.task("hash", gulp.series(hashAssets, rewriteAssets));
-gulp.task("build", gulp.parallel("js", "scss", "hugo", "assets"));
-gulp.task("build:prod", gulp.parallel("js:prod", "scss:prod", "hugo:prod", "assets:prod"));
-gulp.task("server", gulp.series("clean", "build", startBrowserSync));
-gulp.task("deploy", gulp.series("clean:prod", "build:prod", "hash"));
+gulp.task("copy", copyAssets());
+gulp.task("copy:prod", copyAssets("prod"));
+
+gulp.task("compile", gulp.parallel("js", "scss", "hugo", "copy"));
+gulp.task("compile:prod", gulp.parallel("js:prod", "scss:prod", "hugo:prod", "copy:prod"));
+gulp.task("build", gulp.series("clean", "compile"));
+gulp.task("build:prod", gulp.series("clean:prod", "compile:prod", rewriteCSSPaths, rewriteJSPaths));
+gulp.task("server", gulp.series("build", startServer));
+gulp.task("deploy", gulp.series("build:prod"));
 
 function bundleJS(mode) {
-  let config = Object.assign({}, mode === "prod" ? prodConfig : devConfig);
+  const config = Object.assign({}, mode === "prod" ? prodConfig : devConfig);
 
   return function bundleJS(done) {
     webpack(config, (err, stats) => {
@@ -69,22 +74,29 @@ function bundleJS(mode) {
 }
 
 function compileCSS(mode) {
-  let path = "dev/assets/css";
-  let cssPlugins = [
+  const isProduction = mode === "prod";
+  const plugins = [
     autoprefixer()
   ];
+  let path = "dev/assets/css";
 
-  if (mode === "prod") {
+  if (isProduction) {
     path = "dist/assets/css";
-    cssPlugins.push(cssnano());
+    plugins.push(cssnano());
   }
 
   return function compileCSS() {
     return gulp.src("src/scss/*.scss")
+      .pipe(sourcemaps.init())
       .pipe(sass({ includePaths: ["node_modules"] }).on("error", sass.logError))
-      .pipe(postcss(cssPlugins))
+      .pipe(postcss(plugins))
+      .pipe(gulpif(isProduction, rev()))
+      .pipe(gulpif(isProduction, revFormat({ prefix: "." })))
+      .pipe(sourcemaps.write("."))
       .pipe(gulp.dest(path))
-      .pipe(browserSync.stream());
+      .pipe(browserSync.stream())
+      .pipe(gulpif(isProduction, rev.manifest()))
+      .pipe(gulpif(isProduction, gulp.dest(path)));
   }
 }
 
@@ -104,7 +116,7 @@ function runHugo(mode) {
         browserSync.reload();
         done();
       } else {
-        browserSync.notify("Hugo build failed :(");
+        browserSync.notify("Hugo build failed.");
         done("Hugo build failed.");
       }
     }).on("error", err => {
@@ -130,23 +142,37 @@ function copyAssets(mode) {
   }
 }
 
-function hashAssets() {
-  return gulp.src(["dist/assets/**/*.js", "dist/assets/**/*.css", "!dist/assets/**/*.map"])
-    .pipe(rev())
-    .pipe(gulp.dest("dist/assets"))
-    .pipe(rev.manifest())
-    .pipe(gulp.dest("dist/assets"));
-}
-
-function rewriteAssets() {
-  const revManifest = gulp.src("dist/assets/rev-manifest.json");
+function rewriteCSSPaths() {
+  const revManifest = gulp.src("dist/assets/css/rev-manifest.json");
+  const cssPrefixFn = prefixPath("/assets/css");
 
   return gulp.src("dist/**/*.html")
-    .pipe(revReplace({ manifest: revManifest }))
+    .pipe(revRewrite({
+      manifest: revManifest,
+      modifyUnreved: cssPrefixFn,
+      modifyReved: cssPrefixFn
+    }))
     .pipe(gulp.dest("dist"));
 }
 
-function startBrowserSync() {
+function rewriteJSPaths() {
+  const webpackManifest = gulp.src("dist/assets/js/webpack-manifest.json");
+  const jsPrefixFn = prefixPath("/assets/js");
+
+  return gulp.src("dist/**/*.html")
+    .pipe(revRewrite({
+      manifest: webpackManifest,
+      modifyUnreved: jsPrefixFn,
+      modifyReved: jsPrefixFn
+    }))
+    .pipe(gulp.dest("dist"));
+}
+
+function prefixPath(path) {
+  return filename => path + "/" + filename;
+}
+
+function startServer(done) {
   browserSync.init({
     server: {
       baseDir: "dev"
@@ -156,4 +182,6 @@ function startBrowserSync() {
   gulp.watch("src/js/*.js", bundleJS());
   gulp.watch("src/scss/*.scss", compileCSS());
   gulp.watch("src/hugo/**/*", runHugo());
+
+  done();
 }

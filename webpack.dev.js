@@ -10,7 +10,6 @@ module.exports = merge(config, {
 
   output: {
     path: path.join(__dirname, "dev/assets/js"),
-    publicPath: "/",
     filename: "[name].js"
   }
 

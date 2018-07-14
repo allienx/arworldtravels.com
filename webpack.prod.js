@@ -1,5 +1,6 @@
 const path = require("path");
 const merge = require("webpack-merge");
+const ManifestPlugin = require("webpack-manifest-plugin");
 const config = require("./webpack.config.js");
 
 module.exports = merge(config, {
@@ -10,8 +11,13 @@ module.exports = merge(config, {
 
   output: {
     path: path.join(__dirname, "dist/assets/js"),
-    publicPath: "/",
-    filename: "[name].js"
-  }
+    filename: "[name].[chunkhash:10].js"
+  },
+
+  plugins: [
+    new ManifestPlugin({
+      fileName: "webpack-manifest.json"
+    })
+  ]
 
 });

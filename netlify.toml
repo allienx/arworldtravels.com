@@ -10,5 +10,5 @@
   command = "gulp deploy"
 
 [context.production.environment]
-  YARN_VERSION = "1.7.0"
-  HUGO_VERSION = "0.44"
+  YARN_VERSION = "1.12.1"
+  HUGO_VERSION = "0.50"

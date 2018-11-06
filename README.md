@@ -5,14 +5,14 @@ My girlfriend originally built a travel "blog" with [Wix](https://www.wix.com/) 
 ## Tech Stack
 
 * [Hugo](http://gohugo.io/)
-* [Bootstrap 4.0](http://getbootstrap.com/)
+* [Bootstrap](http://getbootstrap.com/)
 * [Primer](https://primer.github.io/) (only [primer-markdown](https://github.com/primer/primer/tree/master/modules/primer-markdown))
 
 <a href="https://www.netlify.com" target="_blank"><img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/></a>
 
 ## Development Tools
 
-* [Gulp 4.0](https://github.com/gulpjs/gulp/tree/4.0)
+* [Gulp](https://gulpjs.com/)
 * [Webpack](https://webpack.js.org/)
 * [Babel](https://babeljs.io/)
 * [Sass](http://sass-lang.com/)
@@ -28,13 +28,13 @@ Install [Hugo](https://gohugo.io/getting-started/installing).
 
 Install [Node.js](https://nodejs.org) and [Yarn](https://yarnpkg.com/en/docs/install).
 
-Install dependencies.
+Install dependencies:
 
 ```sh
 yarn install
 ```
 
-Install `gulp-cli` globally to run tasks.
+Install `gulp-cli` globally to run tasks:
 
 ```sh
 yarn global add gulp-cli

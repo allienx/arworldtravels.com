@@ -10,5 +10,7 @@
   command = "gulp deploy"
 
 [context.production.environment]
-  YARN_VERSION = "1.12.1"
   HUGO_VERSION = "0.50"
+  NODE_VERSION = "10.13.0"
+  RUBY_VERSION = "2.3.6"
+  YARN_VERSION = "1.12.1"

@@ -10,17 +10,12 @@
 
 import $ from "jquery";
 
-export default {
-  init
-};
-
 const topSlide = $(".background-slideshow.top");
 const bottomSlide = $(".background-slideshow.bottom");
 const timerLengthMS = 6000;
 const transitionDurationMS = 1300;
 
 let isTopSlideShowing = true;
-let timerID = null;
 let urls = [
   "/assets/img/background-berlin.jpg",
   "/assets/img/background-bovec.jpg",
@@ -36,10 +31,7 @@ let usedUrls = [urls.pop()];
 
 topSlide.css("background-image", "url(" + usedUrls[0] + ")");
 setTimeout(() => bottomSlide.css("background-image", "url(" + getRandomUrl() + ")"), transitionDurationMS);
-
-function init() {
-  timerID = setInterval(changeBackground, timerLengthMS);
-}
+setInterval(changeBackground, timerLengthMS);
 
 function changeBackground() {
   if (urls.length === 0) {

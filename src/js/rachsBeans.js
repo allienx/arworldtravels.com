@@ -1,9 +1,5 @@
 import $ from "jquery";
 
-export default {
-  init
-};
-
 const rachsBeans = $("#rachsBeans");
 const quote = $("#quote");
 
@@ -16,17 +12,15 @@ const beans = [
   "You know the Indian food is going to be good when the Samosa is good."
 ];
 
-function init() {
-  rachsBeans.click(() => {
-    const nextBean = getNextBean();
+rachsBeans.click(() => {
+  const nextBean = getNextBean();
 
-    if (nextBean) {
-      quote.html("\"" + nextBean + "\"");
-    } else {
-      quote.html("All out of beans!");
-    }
-  });
-}
+  if (nextBean) {
+    quote.html("\"" + nextBean + "\"");
+  } else {
+    quote.html("All out of beans!");
+  }
+});
 
 function getNextBean() {
   if (beans.length === 0) {

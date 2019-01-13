@@ -1,23 +1,17 @@
 import $ from "jquery";
 
-export default {
-  init
-};
-
 const westerkerkNight = $(".westerkerk.night");
 let isNight = false;
 
-function init() {
-  westerkerkNight.on("touchstart", function() {
-    isNight = !isNight;
+westerkerkNight.on("touchstart", function() {
+  isNight = !isNight;
 
-    if (isNight) {
-      night();
-    } else {
-      day();
-    }
-  });
-}
+  if (isNight) {
+    night();
+  } else {
+    day();
+  }
+});
 
 function day() {
   isNight = false;

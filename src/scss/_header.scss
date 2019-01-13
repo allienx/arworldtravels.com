@@ -8,10 +8,10 @@ header {
 
 .background-slideshow {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+    height: calc(100vh - 66px);
     width: 100%;
+    top: 66px;
+    left: 0;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

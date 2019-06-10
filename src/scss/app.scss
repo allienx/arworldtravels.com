@@ -3,7 +3,7 @@
 
 // Import built CSS since the SCSS source files rely on a $spacers variable
 // that overlaps with a variable already defined by the Bootstrap SCSS.
-@import "primer-markdown/build/build";
+@import "@primer/css/markdown/index";
 
 // Custom
 @import "navbar";

@@ -11,6 +11,5 @@
 
 [context.production.environment]
   HUGO_VERSION = "0.53"
-  NODE_VERSION = "10.13.0"
-  RUBY_VERSION = "2.3.6"
-  YARN_VERSION = "1.13.0"
+  NODE_VERSION = "10.16.0"
+  YARN_VERSION = "1.16.0"

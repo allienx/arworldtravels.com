@@ -8,7 +8,7 @@ timezone = "CET"
 author = "Al"
 albumimg = "13-castagneto-1"
 albumtext = "Lucca, Italy"
-albumlink = "http://picourls.com/MN7O"
+albumlink = "https://photos.app.goo.gl/coGqAixPc3ej5YT3A"
 +++
 
 Hello from Tuscany! Rach and I have been in a Tuscan town called Castagneto Carducci for the past week through a program called  Workaway , which is a platform that connects “hosts” all around the world with volunteers. Shout out to Rach here because she discovered Workaway and was the one who got in touch with Chicca. After reading tons of host profiles, Rach came across Chicca’s and it  immediately grabbed her attention (who wouldn’t want to live with an Italian chef right). She also had amazing reviews from past Workaway-ers. The timing was right and we agreed to come stay and help her for two weeks in October (it was a good thing Rach acted quickly because we learned she receives tons of inquiries). We’ve been looking forward to this part of our trip since and have tried to remain flexible with our dates so that we could make it happen.

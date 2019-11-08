@@ -8,7 +8,7 @@ timezone = "PST"
 author = "Rach"
 albumimg = "17-thanksgiving-surprise"
 albumtext = "Palm Springs, California, USA"
-albumlink = "http://picourls.com/MrNM"
+albumlink = "https://photos.app.goo.gl/zWFoSUy3YdHff7BBA"
 +++
 
 As some of you have seen on Facebook by now, we lied and are not in Southeast Asia yet. Instead we spontaneously flew home to LA from Barcelona and surprised our families for Thanksgiving! This wasn’t part of our original plan, but then again we didn’t really have anything set in stone and left our itinerary open for a reason.

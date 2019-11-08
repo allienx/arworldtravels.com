@@ -8,7 +8,7 @@ timezone = "CET"
 author = "Rach"
 albumimg = "15-southern-spain"
 albumtext = "Ronda, Andalusia, Spain"
-albumlink = "http://picourls.com/OelM"
+albumlink = "https://photos.app.goo.gl/25qMwy3Xgn4mHaYU6"
 +++
 
 The South of Spain is nice! So much to see, so culturally rich, and so much interesting history. We titled this post Southern Spain because we have been in five different cities within the last week. Brace yourself, this is gonna be a long one.

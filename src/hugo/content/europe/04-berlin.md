@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Al"
 albumimg = "04-berlin"
 albumtext = "Berlin Wall"
-albumlink = "http://picourls.com/MGkM"
+albumlink = "https://photos.app.goo.gl/seomhv5NFrdJ8CkAA"
 +++
 
 Hey everyone, this is Alex! I know you’ll all miss Rach’s voice but we decided that I should write the post for Berlin. Fair warning, I feel like I will ramble a bit more so this post is longer than our previous posts. We’ve had some trouble uploading pictures through Wix so we decided to share photos through Google Photos albums now (applying backwards to Copenhagen and Amsterdam as well). We already use Google Photos to back up pictures so this is easier for us and it also has some more features than Wix. Check out the links on the Photos page.

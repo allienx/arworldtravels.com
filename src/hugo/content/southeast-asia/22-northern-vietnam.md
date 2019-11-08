@@ -8,7 +8,7 @@ timezone = "ICT"
 author = "Rach"
 albumimg = "22-northern-vietnam"
 albumtext = "Sapa, Vietnam"
-albumlink = "http://picourls.com/OQB1"
+albumlink = "https://photos.app.goo.gl/Su3AHTtekktp2qja9"
 +++
 
 In the last week and a half, we have been busy bees and have been moving around A LOT, wrapping up our time in Vietnam. We spent 1 night in Hanoi, 1 night in Halong Bay, 1 night on Cat Ba Island, 2 nights in Hanoi, 4 nights in Sapa and 1 night in Hanoi again. We experienced another bustling city, a touristy but picturesque bay, and a cold but cool mountain town.

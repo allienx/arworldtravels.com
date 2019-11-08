@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Rach"
 albumimg = "08-croatia"
 albumtext = "Hvar Island, Croatia"
-albumlink = "http://picourls.com/OPgM"
+albumlink = "https://photos.app.goo.gl/6x89tDfGZaoupLPc8"
 +++
 
 Croatia - where to begin… This was one of the places we were most looking forward to visiting and while it was beautiful and we had a great time, Al and I both agreed that it was pretty touristy, even in the “off season” and sort of underwhelming. Compared to some of the other places we visited, history, walking tours, museums, etc. weren’t the main focus of our time. We gathered much of our cultural knowledge by talking to some Croatian locals. We also took advantage of the sun and beach and spent more of our time relaxing. I also caught a bad cold so I was out of commission for a couple days, so we were grateful we had extra time here. Al took wonderful care of me though so I recovered quickly and our Airbnb was super homey and comfortable.

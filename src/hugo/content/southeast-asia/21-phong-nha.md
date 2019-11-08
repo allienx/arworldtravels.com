@@ -8,7 +8,7 @@ timezone = "ICT"
 author = "Al"
 albumimg = "21-phong-nha"
 albumtext = "Phong Nha, Vietnam"
-albumlink = "http://picourls.com/MyRO"
+albumlink = "https://photos.app.goo.gl/Vk9jAUVRiD6UcBxU8"
 +++
 
 Merry Christmas and Happy Holidays! It’s Alex again, we’re a little delayed in this update because we’ve had a busy few days. We’ve slept in a different place for each of the past five nights. Leaving Hue we headed to a town called Phong Nha (FUNG-YA). We heard about this place from a German girl in our first hostel in Saigon. She said that there was a National Park there and that she recommended going there. After doing some research I learned that the National Park is home to the biggest cave in the world! As well as tons of other amazing caves that have been discovered somewhat recently. If you read about it on Wikipedia it says that the biggest cave was first found in 1991, but wasn’t explored in more depth until 2009. It’s only been accessible to tourists since 2013! If you’re like me, then you’ve gotten excited just reading about this place too! Unfortunately, we did not get to explore this cave because they don’t run tours during this season and it also costs around $3000 per person. But we did sign up to do a jungle trek that explored some other caves and it was a awesome experience!

@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Rach"
 albumimg = "02-copenhagen"
 albumtext = "Nyhavn, Copenhagen"
-albumlink = "http://picourls.com/1W5M"
+albumlink = "https://photos.app.goo.gl/R4C2LRsUuDACLGY37"
 +++
 
 Before we left I said I forgot what it was like to stay in a Hostel since it had been four years…but I quickly remembered the first night when I didn’t sleep at all. We were in a four bed shared room with an older Asian couple, easily the oldest people in the whole hostel. The man was little, less than five feet, but boy could he snore! He was sawing wood all night and even threw in the occasional fart. The combination of travel excitement, late night coffee, snoring and farting kept my mind racing all night. Needless to say, I was ready to get up and out ASAP so we did so bright and early at 6 AM our first morning and went on a morning walk to get pastries at a gluten free bakery. It turned out to be a blessing in disguise because not many people were out, except for all the runners. Other than that first night, we enjoyed our stay.

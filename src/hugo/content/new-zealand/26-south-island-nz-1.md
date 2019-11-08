@@ -8,7 +8,7 @@ timezone = "NZDT"
 author = "Rach"
 albumimg = "26-south-island-nz-1"
 albumtext = "Bealey Spur Trail, Arthur's Pass, New Zealand"
-albumlink = "http://picourls.com/1V9O"
+albumlink = "https://photos.app.goo.gl/Q2uW3k6WGqQ2epxm8"
 +++
 
 Four flights and 21+ hours later, we made it to Christchurch, New Zealand! We flew on the budget airline, Air Asia (which we would definitely not recommend for long flights), and had stopovers in Kuala Lumpur, Malaysia and Gold Coast, Australia. I think we went through security checks more than four times in total. In Australia we had to get off the plane, go through international security, and then get back on the same plane in the same seats. After a quick overnight at an Airbnb in Auckland, we flew to Christchurch the next day.

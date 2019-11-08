@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Rach"
 albumimg = "09-oktoberfest"
 albumtext = "Oktoberfest, Munich, Germany"
-albumlink = "http://picourls.com/1LGO"
+albumlink = "https://photos.app.goo.gl/zbc5SrVYdihsV7in7"
 +++
 
 We were sad to see our time in Croatia end, but we were looking forward to the next leg of our trip as we were meeting up with our friends Michelle and Daniel. Our Airbnb host drove us to the bus stop bright and early so we could catch a bus to the Split airport which ended up being 25 minutes out of the city center. We got the last seats on the bus and ended up getting to the airport too early to even check in for our flight. But seeing as things had seemed to run a little late in Croatia thus far, we decided to give ourselves some extra time.

@@ -8,7 +8,7 @@ timezone = "CEST"
 author = "Rach"
 albumimg = "06-budapest"
 albumtext = "Heroes' Square, Budapest"
-albumlink = "http://picourls.com/1KmM"
+albumlink = "https://photos.app.goo.gl/S27uiP3PibKHqpnS7"
 +++
 
 Budapest or Buda”pesht” as they pronounce it here was a pleasant surprise. We had heard mixed things prior to coming here and it wasn’t on our original itinerary but I think we are both glad we came. This might be partially because it was sunny and warm for the first time on our trip and we wore sandals and shorts the whole time. We stayed in a “Vintage Studio” AirBnB a 25 minute walk from the city center. It was smaller and darker then our place in Prague but we made the most of it. It was situated in a building with a big courtyard and a stray cat that meowed all day long and which Al befriended.

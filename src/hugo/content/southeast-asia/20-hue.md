@@ -8,7 +8,7 @@ timezone = "ICT"
 author = "Al"
 albumimg = "20-hue"
 albumtext = "Hai Van Pass, Vietnam"
-albumlink = "http://picourls.com/O3kO"
+albumlink = "https://photos.app.goo.gl/mq3j788XZWgpBRhS8"
 +++
 
 Rach told me that since this is “my kind of people’s” continent and it’s about time I write one of our trip updates. Just kidding! You all know that Rachie would never say something like that but this is Alex writing the update.
